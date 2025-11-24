@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .container
+      .header
+        h1 🐾 My Pets
+        p Manage your lovely pets collection
+      
+      .content
+        a.btn-primary(href="/update-cobj") + Add New Pet
+        
+        if records && records.length > 0
+          table.pets-table
+            thead
+              tr
+                th Name
+                th Type
+                th Age
+            tbody
+              each record in records
+                tr
+                  td= record.properties.name
+                  td= record.properties.type
+                  td= record.properties.age
+        else
+          .empty-state
+            h3 No pets found yet
+            p Start by adding your first pet!
+            a.btn-primary(href="/update-cobj") Add Your First Pet
