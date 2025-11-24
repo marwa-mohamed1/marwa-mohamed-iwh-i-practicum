@@ -1,58 +1,192 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-body, * {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-    margin: 1rem;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.cards {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
-.card {
-    flex-basis: 31%;
-    margin: 1rem 0.4rem;
-    padding: 1rem 0.4rem 2.5rem 0.4rem;
-    border: solid 1px lightgrey;
-    border-radius: 15px;
-    box-shadow: 3px 2px 6px lightgrey;
+/* Header styles */
+.header {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  padding: 30px;
+  text-align: center;
 }
 
-.card__email {
-    font-size: 1rem;
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.form-wrapper {
-    font-size: 18px;
-    max-width: 768px;
-    margin: 2rem auto;
-    padding: 2rem;
-    border: solid 1px lightgrey;
-    border-radius: 15px;
-    box-shadow: 3px 2px 6px lightgrey;
+/* Content styles */
+.content {
+  padding: 30px;
 }
 
-label, input {
-    margin-top: 5px;
-    display: block;
-    font-size: inherit;
+/* Button and link styles */
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-input[type="text"] {
-    padding: .25rem;
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #764ba2, #667eea);
 }
 
-input[type="submit"] {
-    background-color: lightgrey;
-    border: none;
-    padding: .375rem 1rem;
-    margin-top: 10px;
+.btn-secondary {
+  display: inline-block;
+  background: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+/* Table styles */
+.pets-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pets-table th {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pets-table td {
+  padding: 15px;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.3s ease;
+}
+
+.pets-table tr:hover td {
+  background-color: #f8f9fa;
+}
+
+.pets-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Form styles */
+.form-container {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #495057;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+    border-radius: 10px;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .pets-table {
+    font-size: 14px;
+  }
+  
+  .pets-table th,
+  .pets-table td {
+    padding: 10px;
+  }
 }

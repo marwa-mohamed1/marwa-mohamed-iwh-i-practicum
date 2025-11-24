@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    .container
+      .header
+        h1 🐕 Add New Pet
+        p Add a new member to your pets family
+      
+      .content
+        a.btn-secondary(href="/") ← Return to homepage
+        
+        .form-container
+          form(method="POST", action="/update-cobj")
+            .form-group
+              label(for="name") 🏷️ Pet Name:
+              input(type="text", id="name", name="name", placeholder="Enter pet name", required)
+            
+            .form-group
+              label(for="type") 🐾 Animal Type:
+              input(type="text", id="type", name="type", placeholder="e.g., Dog, Cat, Bird", required)
+            
+            .form-group
+              label(for="age") 🎂 Age:
+              input(type="text", id="age", name="age", placeholder="e.g., 2 years, 5 months", required)
+            
+            button.btn-primary(type="submit") 🎉 Add Pet
